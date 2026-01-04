@@ -1,0 +1,77 @@
+# =============================================================================
+# Python Research Environment for Image-to-3D & NeRF Experimentation
+# Requires: Python 3.10+
+# Note: Install PyTorch with CUDA separately via pytorch.org for your system
+# =============================================================================
+
+# --- Jupyter & Notebook Tooling ---
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+notebook>=7.0.0
+ipywidgets>=8.0.0          # Interactive widgets in notebooks
+tqdm>=4.65.0               # Progress bars
+
+# --- Core ML (PyTorch ecosystem) ---
+# Install torch/torchvision/torchaudio from pytorch.org for correct CUDA version
+# Example: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+torchaudio
+einops>=0.7.0              # Tensor operations, widely used in 3D/NeRF papers
+timm>=0.9.0                # PyTorch image models
+
+# --- Hugging Face Ecosystem ---
+transformers>=4.36.0       # Model hub and architectures
+diffusers>=0.25.0          # Diffusion models (used by Hunyuan3D-2)
+accelerate>=0.25.0         # Distributed training and inference
+safetensors>=0.4.0         # Fast, safe tensor serialization
+huggingface-hub>=0.20.0    # Model downloading and caching
+
+# --- NeRF / 3D Reconstruction ---
+nerfstudio>=1.0.0          # NeRF training and visualization framework
+# nerfstudio will install: nerfacc, gsplat, viser, tyro, etc.
+
+# --- Image Processing ---
+Pillow>=10.0.0             # PIL for image I/O
+opencv-python>=4.8.0       # OpenCV for image/video processing
+imageio>=2.31.0            # Image and video I/O
+imageio-ffmpeg>=0.4.8      # FFmpeg backend for video encoding
+scikit-image>=0.21.0       # Image processing utilities
+
+# --- 3D Mesh & Geometry Utilities ---
+trimesh>=4.0.0             # Mesh loading, manipulation, export (GLB/OBJ/STL)
+pymeshlab>=2023.12         # MeshLab Python bindings for mesh processing
+open3d>=0.18.0             # Point clouds, meshes, 3D visualization
+plyfile>=1.0.0             # PLY file reading/writing
+pygltflib>=1.16.0          # GLTF/GLB file handling
+
+# --- Numerical & Scientific Computing ---
+numpy>=1.24.0
+scipy>=1.11.0
+matplotlib>=3.7.0          # Plotting and visualization
+
+# --- Video / Rendering Utilities ---
+mediapy>=1.1.0             # Video display in notebooks
+moviepy>=1.0.3             # Video editing and composition
+# imageio-ffmpeg already included above for video encoding
+
+# --- Utilities ---
+omegaconf>=2.3.0           # Config management (used by nerfstudio)
+pyyaml>=6.0                # YAML parsing
+requests>=2.31.0           # HTTP requests for downloading
+filelock>=3.12.0           # File locking for safe downloads
+typing-extensions>=4.8.0   # Backported typing features
+
+# --- Optional but Useful ---
+rich>=13.0.0               # Pretty console output and progress
+wandb>=0.16.0              # Experiment tracking (optional, comment out if not needed)
+tensorboard>=2.14.0        # Training visualization
+lpips>=0.1.4               # Perceptual loss metrics for image quality
+pytorch3d                  # Meta's 3D deep learning library (may need special install)
+# Note: pytorch3d may require: pip install "git+https://github.com/facebookresearch/pytorch3d.git"
+
+# --- Hunyuan3D-2 Specific ---
+# The model may have additional deps; check official repo for updates
+# Most requirements covered by transformers + diffusers above
+rembg>=2.0.50              # Background removal for input images
+onnxruntime>=1.16.0        # ONNX inference (used by rembg)
