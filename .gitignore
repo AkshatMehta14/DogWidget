@@ -1,0 +1,440 @@
+# =============================================================================
+# .gitignore for Image-to-3D & NeRF Experimentation Repository
+# Python + Jupyter + ML/GPU + Data/Outputs + OS/Editor artifacts
+# =============================================================================
+
+# =============================================================================
+# Python Virtual Environments & Build Artifacts
+# =============================================================================
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*.virtualenv
+
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Linting / formatting caches
+.ruff_cache/
+.pylint.d/
+
+# =============================================================================
+# Jupyter Notebooks
+# =============================================================================
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Jupyter Lab
+.jupyter/
+.local/share/jupyter/
+
+# IPython history
+profile_default/
+ipython_config.py
+.ipython/
+
+# =============================================================================
+# Machine Learning / GPU Artifacts
+# =============================================================================
+
+# Model weights and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pb
+*.tflite
+*.engine
+*.plan
+*.bin
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+
+# Training artifacts and logs
+runs/
+outputs/
+checkpoints/
+lightning_logs/
+mlruns/
+wandb/
+tensorboard/
+.wandb/
+*.log
+
+# Experiment tracking
+.neptune/
+.comet/
+
+# =============================================================================
+# Data Directories (Large Files)
+# =============================================================================
+
+# Raw and processed data
+data/
+datasets/
+raw_data/
+processed_data/
+
+# But keep directory structure with .gitkeep
+!.gitkeep
+!data/.gitkeep
+!data/*/.gitkeep
+!data/*/*/.gitkeep
+!outputs/.gitkeep
+!outputs/*/.gitkeep
+!outputs/*/*/.gitkeep
+
+# Specific data patterns
+*.npy
+*.npz
+*.csv
+*.tsv
+*.json.gz
+*.parquet
+*.feather
+*.arrow
+
+# =============================================================================
+# 3D Assets & Outputs (Large Files)
+# =============================================================================
+
+# 3D mesh formats
+*.obj
+*.mtl
+*.glb
+*.gltf
+*.usdz
+*.fbx
+*.dae
+*.stl
+*.ply
+*.off
+*.3ds
+
+# NeRF / 3D reconstruction outputs
+*.splat
+*.ckpt
+colmap/
+sparse/
+dense/
+images_*/
+cache/
+
+# Video outputs
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.gif
+
+# Image outputs (processed/generated)
+renders/
+turntables/
+visualizations/
+*.exr
+*.hdr
+
+# =============================================================================
+# Hugging Face & Model Caches
+# =============================================================================
+
+# Hugging Face cache (if in repo)
+.huggingface/
+huggingface_cache/
+transformers_cache/
+diffusers_cache/
+
+# Hugging Face Hub token
+.huggingface_token
+
+# Model downloads
+models/
+pretrained/
+weights/
+
+# =============================================================================
+# Conda & CUDA Environments
+# =============================================================================
+
+# Conda environments
+*.conda/
+.conda/
+conda-meta/
+miniconda/
+miniconda3/
+anaconda/
+anaconda3/
+
+# Conda environment files (keep .yml templates)
+# environment.yml should NOT be ignored
+
+# CUDA compilation artifacts
+*.cu.o
+*.ptx
+*.cubin
+*.fatbin
+
+# TensorRT engines
+*.engine
+*.plan
+
+# =============================================================================
+# Environment Variables & Secrets
+# =============================================================================
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.envrc
+
+# API keys and credentials
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials.json
+secrets.json
+config.local.*
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# IDEs & Editors
+# =============================================================================
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+.history/
+*.vsix
+
+# JetBrains IDEs (PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+*.swp
+*.swo
+*~.nib
+local.properties
+.gradle/
+.gradletasknamecache
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# Temporary & Misc Files
+# =============================================================================
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Compressed archives (usually outputs)
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Lock files (keep package lock files like requirements.txt)
+*.lock
+!poetry.lock
+!package-lock.json
+!yarn.lock
+
+# Profiling data
+*.prof
+*.lprof
+*.pyprof
+
+# =============================================================================
+# Project-Specific Patterns
+# =============================================================================
+
+# Nerfstudio specific
+ns-data/
+ns-outputs/
+ns-exports/
+
+# COLMAP database
+database.db
+*.db
+
+# Blender temp files
+*.blend1
+*.blend2
+
+# Downloaded datasets (examples)
+# Uncomment if you download standard datasets locally
+# imagenet/
+# coco/
+# shapenet/
+
+# =============================================================================
+# Keep These Files (Exceptions)
+# =============================================================================
+
+# Allow keeping directory structure
+!.gitkeep
+
+# Allow small example configs and templates
+!config_template.yaml
+!example_config.yaml
+!.env.example
+!.env.template
+
+# Allow documentation
+!README.md
+!LICENSE
+!CONTRIBUTING.md
+!docs/
+
+# Allow small test/sample data if needed
+# !data/samples/
+# !data/examples/
